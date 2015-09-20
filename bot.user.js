@@ -1,17 +1,13 @@
 /*The MIT License (MIT)
-
-Copyright (c) 2015 Haydari
-
+Copyright (c) 2015 haydaritolique
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,13 +19,12 @@ SOFTWARE.*/
 // ==UserScript==
 // @name        HaydariBot
 // @namespace   HaydariBot
-// @include     http://agar.io/*
+// @include     http://www.agariopvp.com/chat/*
 // @version     3.63
 // @grant       none
-// @author      -
 // ==/UserScript==
 
-var HaydariBotVersion = 3.63;
+var haydariBotVersion = 3.63;
 
 //TODO: Team mode
 //      Detect when people are merging
@@ -46,7 +41,7 @@ Array.prototype.peek = function() {
     return this[this.length - 1];
 };
 
-var sha = "9904d9c8998a2f9bd23e3906866789a642b5532b";
+var sha = "f4511ef305c6331f2bba1fe6b48bf8190ea10af5";
 function getLatestCommit() {
     window.jQuery.ajax({
             url: "https://api.github.com/repos/HaydariGeceler/Agario-Bot/git/refs/heads/master",
@@ -78,7 +73,7 @@ function getLatestCommit() {
                 
                 if(latestVersion > myVersion)
                 {
-                    update("HaydariBot", "bot.user.js", "https://github.com/HaydariGeceler/Agario-Bot/blob/" + sha + "/bot.user.js/");
+                    update("haydariBot", "bot.user.js", "https://github.com/HaydariGeceler/Agario-Bot/blob/" + sha + "/bot.user.js/");
                 }
                 console.log('Current bot.user.js Version: ' + myVersion + " on Github: " + latestVersion);
             });
@@ -87,13 +82,13 @@ function getLatestCommit() {
 }
 getLatestCommit();
 
-console.log("Running Haydari Bot!");
+console.log("Running haydari Bot!");
 
 var f = window;
 var g = window.jQuery;
 
 
-console.log("Haydari Bot!");
+console.log("haydari Bot!");
 
 window.botList = window.botList || [];
 
@@ -106,11 +101,10 @@ window.botList = window.botList || [];
                 screenToGameY(getMouseY())];
     };
 }
-
 window.botList.push(new QuickBot());*/
 
-function HaydariBot() {
-    this.name = "HaydariBot " + haydariBotVersion;
+function haydariBot() {
+    this.name = "haydariBot " + haydariBotVersion;
 
     this.toggleFollow = false;
     this.keyAction = function(key) {
@@ -881,7 +875,6 @@ function HaydariBot() {
 
                         /*if ((enemyCanSplit && enemyDistance < splitDangerDistance) ||
                             (!enemyCanSplit && enemyDistance < normalDangerDistance)) {
-
                             allPossibleThreats[i].danger = true;
                             allPossibleThreats[i].dangerTimeOut = f.getLastUpdate();
                         }*/
@@ -1163,9 +1156,7 @@ function HaydariBot() {
                         break;
                     }
                 }
-
                 destinationChoices.sort(function(a, b){return b[1] - a[1]});
-
                 if (dangerFound) {
                     for (var i = 0; i < destinationChoices.length; i++) {
                         if (destinationChoices[i][2]) {
@@ -1188,6 +1179,6 @@ function HaydariBot() {
         }
     };
 };
-window.botList.push(new HaydariBot());
+window.botList.push(new haydariBot());
 
 window.updateBotList(); //This function might not exist yet.

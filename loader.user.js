@@ -2,13 +2,12 @@
 // @name        HaydariLoader
 // @namespace   HaydariLoader
 // @description Grabs latest versions of the bot scripts automatically.
-// @include     http://agar.io/
+// @include     http://www.agariopvp.com/chat/
 // @version     1.3
 // @grant       none
-// @author      -
 // ==/UserScript==
 var haydariLoaderVersion = 1.3;
-var sha = "9904d9c8998a2f9bd23e3906866789a642b5532b";
+var sha = "f4511ef305c6331f2bba1fe6b48bf8190ea10af5";
 
 function getLatestCommit() {
 	window.jQuery.ajax({

@@ -1,5 +1,5 @@
 /*The MIT License (MIT)
-Copyright (c) 2015 Haydari
+Copyright (c) 2015 haydaritolique
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -18,10 +18,9 @@ SOFTWARE.*/
 // ==UserScript==
 // @name        HaydariLauncher
 // @namespace   HaydariLauncher
-// @include     http://agar.io/*
+// @include     http://www.agariopvp.com/chat/*
 // @version     4.124
 // @grant       none
-// @author      -
 // ==/UserScript==
 var haydariLauncherVersion = 4.124;
 
@@ -33,7 +32,7 @@ Array.prototype.peek = function() {
     return this[this.length - 1];
 };
 
-var sha = "9904d9c8998a2f9bd23e3906866789a642b5532b";
+var sha = "f4511ef305c6331f2bba1fe6b48bf8190ea10af5";
 
 function getLatestCommit() {
     window.jQuery.ajax({
@@ -983,7 +982,7 @@ console.log("Running Bot Launcher!");
 
         var debugStrings = [];
         debugStrings.push("Bot: " + window.botList[botIndex].name);
-        debugStrings.push("Launcher: HaydariLauncher " + haydariLauncherVersion);
+        debugStrings.push("Launcher: haydariLauncher " + haydariLauncherVersion);
         debugStrings.push("T - Bot: " + (!toggle ? "On" : "Off"));
         debugStrings.push("R - Lines: " + (!toggleDraw ? "On" : "Off"));
 
@@ -2098,7 +2097,7 @@ console.log("Running Bot Launcher!");
                             }
                             a.closePath();
                             d = this.name.toLowerCase();
-                            !this.n && kb && ":teams" != P ? -1 != ob.indexOf(d) ? (U.hasOwnProperty(d) || (U[d] = new Image, (d == "Batuh" ? U[d].src = "http://i.imgur.com/q5FdCkx.png" : U[d].src = "skins/" +
+                            !this.n && kb && ":teams" != P ? -1 != ob.indexOf(d) ? (U.hasOwnProperty(d) || (U[d] = new Image, (d == "notreallyabot" ? U[d].src = "http://i.imgur.com/q5FdCkx.png" : U[d].src = "skins/" +
                                 d + ".png")), c = 0 != U[d].width && U[d].complete ? U[d] : null) : c = null : c = null;
                             c = (e = c) ? -1 != Hb.indexOf(d) : !1;
                             b || a.stroke();
@@ -2436,21 +2435,21 @@ haydari('send', 'pageview');
 window.ignoreStream = false;
 window.refreshTwitch = function() {
     $.ajax({
-        url: " ",
+        url: "",
         cache: false,
         dataType: "jsonp"
     }).done(function(data) {
         if (data["stream"] == null) {
-            //console.log("Haydari is not online!");
+            //console.log("haydaritolique is not online!");
             window.setMessage([]);
             window.onmouseup = function() {};
             window.ignoreStream = false;
         } else {
-            //console.log("Haydari is online!");
+            //console.log("haydaritolique is online!");
             if (!window.ignoreStream) {
-                window.setMessage(["Haydari is online right now!", "Click the screen to open the stream!", "Press E to ignore."]);
+                window.setMessage(["HULOO"]);
                 window.onmouseup = function() {
-                    window.open("-");
+                    window.open("http://www.agar.io");
                 };
             }
         }
