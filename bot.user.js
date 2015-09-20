@@ -1,6 +1,6 @@
 /*The MIT License (MIT)
 
-Copyright (c) 2015 Apostolique
+Copyright (c) 2015 Haydari
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -21,12 +21,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
 // ==UserScript==
-// @name        HaydarBot
-// @namespace   HaydarBot
+// @name        HaydariBot
+// @namespace   HaydariBot
 // @include     http://agar.io/*
 // @version     3.63
 // @grant       none
-// @author      -// ==/UserScript==
+// @author      -
+// ==/UserScript==
 
 var HaydariBotVersion = 3.63;
 
@@ -45,10 +46,10 @@ Array.prototype.peek = function() {
     return this[this.length - 1];
 };
 
-var sha = "efde0488cc2cc176db48dd23b28a20b90314352b";
+var sha = "9904d9c8998a2f9bd23e3906866789a642b5532b";
 function getLatestCommit() {
     window.jQuery.ajax({
-            url: "https://api.github.com/repos/apostolique/Agar.io-bot/git/refs/heads/master",
+            url: "https://api.github.com/repos/HaydariGeceler/Agario-Bot/git/refs/heads/master",
             cache: false,
             dataType: "jsonp"
         }).done(function(data) {
@@ -68,16 +69,16 @@ function getLatestCommit() {
                 window.jQuery("#" + prefix + "Dialog").show();
             }
 
-            $.get('https://raw.githubusercontent.com/Apostolique/Agar.io-bot/master/bot.user.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
+            $.get('https://raw.githubusercontent.com/HaydariGeceler/Agario-Bot/master/bot.user.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
                 var latestVersion = data.replace(/(\r\n|\n|\r)/gm,"");
                 latestVersion = latestVersion.substring(latestVersion.indexOf("// @version")+11,latestVersion.indexOf("// @grant"));
 
                 latestVersion = parseFloat(latestVersion + 0.0000);
-                var myVersion = parseFloat(aposBotVersion + 0.0000); 
+                var myVersion = parseFloat(haydariBotVersion + 0.0000); 
                 
                 if(latestVersion > myVersion)
                 {
-                    update("aposBot", "bot.user.js", "https://github.com/Apostolique/Agar.io-bot/blob/" + sha + "/bot.user.js/");
+                    update("HaydariBot", "bot.user.js", "https://github.com/HaydariGeceler/Agario-Bot/blob/" + sha + "/bot.user.js/");
                 }
                 console.log('Current bot.user.js Version: ' + myVersion + " on Github: " + latestVersion);
             });
@@ -86,13 +87,13 @@ function getLatestCommit() {
 }
 getLatestCommit();
 
-console.log("Running Apos Bot!");
+console.log("Running Haydari Bot!");
 
 var f = window;
 var g = window.jQuery;
 
 
-console.log("Apos Bot!");
+console.log("Haydari Bot!");
 
 window.botList = window.botList || [];
 
@@ -108,8 +109,8 @@ window.botList = window.botList || [];
 
 window.botList.push(new QuickBot());*/
 
-function AposBot() {
-    this.name = "AposBot " + aposBotVersion;
+function HaydariBot() {
+    this.name = "HaydariBot " + haydariBotVersion;
 
     this.toggleFollow = false;
     this.keyAction = function(key) {
@@ -1187,6 +1188,6 @@ function AposBot() {
         }
     };
 };
-window.botList.push(new AposBot());
+window.botList.push(new HaydariBot());
 
 window.updateBotList(); //This function might not exist yet.
