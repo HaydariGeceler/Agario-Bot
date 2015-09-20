@@ -1,5 +1,5 @@
 /*The MIT License (MIT)
-Copyright (c) 2015 haydaritolique
+Copyright (c) 2015 haydari1tolique
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -17,14 +17,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.*/
 
 // ==UserScript==
-// @name        HaydariBot
-// @namespace   HaydariBot
+// @name        haydari1Bot
+// @namespace   haydari1Bot
 // @include     http://www.agariopvp.com/chat/*
 // @version     3.63
 // @grant       none
 // ==/UserScript==
 
-var haydariBotVersion = 3.63;
+var haydari1BotVersion = 3.63;
 
 //TODO: Team mode
 //      Detect when people are merging
@@ -69,11 +69,11 @@ function getLatestCommit() {
                 latestVersion = latestVersion.substring(latestVersion.indexOf("// @version")+11,latestVersion.indexOf("// @grant"));
 
                 latestVersion = parseFloat(latestVersion + 0.0000);
-                var myVersion = parseFloat(haydariBotVersion + 0.0000); 
+                var myVersion = parseFloat(haydari1BotVersion + 0.0000); 
                 
                 if(latestVersion > myVersion)
                 {
-                    update("haydariBot", "bot.user.js", "https://github.com/HaydariGeceler/Agario-Bot/blob/" + sha + "/bot.user.js/");
+                    update("haydari1Bot", "bot.user.js", "https://github.com/HaydariGeceler/Agario-Bot/blob/" + sha + "/bot.user.js/");
                 }
                 console.log('Current bot.user.js Version: ' + myVersion + " on Github: " + latestVersion);
             });
@@ -82,13 +82,13 @@ function getLatestCommit() {
 }
 getLatestCommit();
 
-console.log("Running haydari Bot!");
+console.log("Running haydari1 Bot!");
 
 var f = window;
 var g = window.jQuery;
 
 
-console.log("haydari Bot!");
+console.log("haydari1 Bot!");
 
 window.botList = window.botList || [];
 
@@ -103,8 +103,8 @@ window.botList = window.botList || [];
 }
 window.botList.push(new QuickBot());*/
 
-function haydariBot() {
-    this.name = "haydariBot " + haydariBotVersion;
+function haydari1Bot() {
+    this.name = "haydari1Bot " + haydari1BotVersion;
 
     this.toggleFollow = false;
     this.keyAction = function(key) {
@@ -1179,6 +1179,6 @@ function haydariBot() {
         }
     };
 };
-window.botList.push(new haydariBot());
+window.botList.push(new haydari1Bot());
 
 window.updateBotList(); //This function might not exist yet.
